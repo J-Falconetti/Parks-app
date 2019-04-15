@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/home.css">
+
+<title>Stay in Touch</title>
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+</head>
+
+<body>
+  <div class="container">
+  <!-- nav bar -->
+  <div class=row>
+    <div class = "col-md-12">
+      <!-- Nav Bar for homepage and contact us page -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">National Parks Finder |
+             <br>  <span class="navbar-text">
+                Your 50 State National Parks Finder |
+              </span>
+              
+          </a>
+         
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <div>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='index.html'">WELCOME |</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='database.html'">PARK FINDER |</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"onclick="window.location.href='firebase.html'">SAY HELLO |</button>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+      
+      
+        <!-- end nav -->
+    <!-- start form -->
+   <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            New Member Sign-Up
+          </div>
+          <div class="card-body">
+
+
+
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">First and Last Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="email-input">Email: (NOT DISPLAYED or Shared with anyone)</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group row">
+                <label for="Parks">How many parks have you been to?:</label>
+                <input class="form-control" id="Parks-input" type="number">
+              </div>
+              <div class="form-group row">
+                <label for="comment-input">Tell us about your Favorite Park!</label>
+                <textarea class="form-control" rows="5" id="comment-input"></textarea>
+              </div>
+              <button class="btn btn-link" id="add-user" type="submit">Submit</button>
+           
+</div>
+</div>
+
+          </div>
+          <div class="col-lg-6">
+            <div class="card card-default">
+              <div class="card-header">
+                Most Recent Member
+              </div>
+              <div class="card-body" id="recent-member">
+                <h2 id="name-display"></h2>
+                <h4 id="email-display"></h4>
+                <h4 id="Parks-display"></h4>
+                <p id="comment-display"></p>
+              </div>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      </div>
+    
+    
+      <script src="https://code.jquery.com/jquery.js"></script>
+    
+    
+      <script>
+       
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDp2erCZfymId-iTkNBuR0H3LC8pHtcYYA",
+          authDomain: "parks-57d3e.firebaseapp.com",
+          databaseURL: "https://parks-57d3e.firebaseio.com",
+          projectId: "parks-57d3e",
+          storageBucket: "parks-57d3e.appspot.com",
+          messagingSenderId: "776058284216"
+        };
+        firebase.initializeApp(config);
+        // Create a variable to reference the database.
+        var database = firebase.database();
+        // Values
+        var name = "";
+        var email = "";
+        var Parks = 0;
+        var comment = "";
+        $("#add-user").on("click", function (event) {
+          event.preventDefault();
+          // Grabbed values from text boxes
+          name = $("#name-input").val().trim();
+          email = $("#email-input").val().trim();
+          Parks = $("#Parks-input").val().trim();
+          comment = $("#comment-input").val().trim();
+          // pushing to Firebase db
+          database.ref().push({
+            name: name,
+            email: email,
+            Parks: Parks,
+            comment: comment,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+          });
+        });
+        database.ref().on("child_added", function (snapshot) {
+          var sv = snapshot.val();
+          // display last user.
+          $("#name-display").text("Visitor Name: " +sv.name);
+          // $("#email-display").text(sv.email);
+          $("#Parks-display").text("I have been to: " +sv.Parks+ " National Parks");
+          $("#comment-display").text(sv.comment);
+        }, function (errorObject) {
+          console.log("Errors handled: " + errorObject.code);
+        });
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+</body>
+</html>

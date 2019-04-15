@@ -1,0 +1,103 @@
+nav {
+    background-color:  #f7edca!important;
+    height: 109px;
+    border-radius: 25px;
+
+}
+
+body {
+    background-image: url("../images/Wallpaper.jpg");
+    background-size: 100%, 100%;
+    background-attachment: fixed;
+    margin: 30px; 
+    border-radius: 25px;
+}
+
+.btn-flat {
+    color:  rgb(87, 81, 67);
+    margin: 20px;
+    margin-top: 10px;
+    
+}
+
+.card {
+    background-color: #f7edcadb;
+    height: 400px;
+    text-align:center;
+    border-radius: 25px;
+    
+}
+.title{
+    text-align: center;
+    color: rgb(87, 81, 67);
+    font-family: Libre Franklin;
+    margin-top:20px;
+    /* background-color: #f7edcadb;
+    border-radius: 25px; */
+}
+.weather {
+    font-size: 23px;
+   
+}
+.wcard{
+    background-image: url("../images/sky.jpg");
+}
+
+.modal-content {
+    background-clip: unset;
+    background-color: #6c757de0;
+}
+
+a {
+    color: #1f2531;
+}
+
+
+.container {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    
+
+}
+.activator{
+    margin:20px;
+    border: solid, 5px, rgb(196, 166, 35);
+}
+#selectedstate{
+    color: rgb(196, 166, 35);
+    font-family: Libre Franklin;
+    font-size: 48px;
+
+}
+#pic{
+    padding: inherit;
+    margin-top:10px;
+
+}
+
+.imgCard {
+    max-width: 280px;
+}
+
+.mainrow {
+    background-color:  #f7edcadb;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.nav-item {
+    align-items: left;
+}
+
+.bg-light {
+    background-color:  #f7edca!important;
+}
+
+.btn {
+    margin-right: 10px;
+}
+#navbarText {
+    margin-left: 400px;
+}
+
