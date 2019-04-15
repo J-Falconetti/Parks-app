@@ -1,0 +1,61 @@
+body{
+    background-image: url("../images/Wallpaper.jpg");
+    background-attachment: fixed;
+    border-radius: 25px;
+    font-weight: 200;
+    margin: 30px; 
+    
+}
+.spacer10 { 
+    height: 10px;
+     width: 100%;
+     font-size: 0;
+     margin: 0px;;
+     padding: 0;
+     border: 0;
+     display: block;
+     }
+     #dbase {
+        width:100px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+nav {
+        background-color:  #f7edca!important;
+        height: 109px;
+        border-radius: 25px;
+
+    
+}
+
+.bg-light {
+    background-color:  #f7edca!important;
+}
+
+.row {
+    margin: 20px;
+}
+
+.btn {
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#navbarText {
+    margin-left: 300px;
+}
+
+.container {
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    
+
+}
+
+.nav-item {
+    margin-right: 10px;
+    
+}
