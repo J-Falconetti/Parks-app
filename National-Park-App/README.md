@@ -1,45 +1,26 @@
-**This is bold text**
-*This text is italicized*
-~~This was mistaken text~~
-
-**This text is _extremely_ important**
-
-format code in its own block like below:
-```
-git status
-git add
-git commit
-```
-
 # National Park Finder
 
 
-Motivation:=====> Chris
+## Motivation
+This app was made to help people find a under used and often unknowen resouce.  Our National Parks system
 
 
 
-Features:======> 
+## Features:
 National Parks Finder Ver 1.0.0 is a full featured web application that allows is users to look for national parks by states, and get real time weather information, along with photos of parks from the selected state.  This application also allows the user to share their information with the National Parks Finder Team, so that we can then use the information provided to let them know of up coming events, or share news.   In future versions we will incorporate more features, like photo sharing, and “find a friend to hike with”, just to name a few.   
 
 
-Screenshots:=====> (if needed in features)
-
-
-
-Tech/Framework used:=====> Rose
+## Tech/Framework used:
         built with:
             -bootstrap
             -firebase
             -materialise
-            -ect.
+            -API Calls
 
 
 
 
-API Reference:
-
-
-**What's an API?**
+## API Reference:
 
 An application programming interface (API) is a set of requirements that allows one application to talk to another.  This application utilizes the API's listed below to retrieve information relevant to the user's search parameters.
 
@@ -62,7 +43,7 @@ An application programming interface (API) is a set of requirements that allows 
 
 
 
-How to use?:=====> Joe -review by Rose
+## How to use?:
 
 Starting at the welcome page, National Parks Finder is a simple to use app.  Weather you are in your home state, planning a vacation, or just wondering what some of our parks and other national treasures are like.  From the Welcome Page, you will find our easy to follow Navigation Bar on the top of the screen, and this will follow you throughout your visit to the app. From here you will click on either the easy to find button on the bottom of the page,  located below the scrolling photos, or the link on top to enter the National Parks Finder page.  Here you simply select the state from the pull-down menu at the top select any of the fifty (50) state or the District of Columbia, and find the national treasures in the area, along with photos (powered by google places) and the current weather conditions (powered by WeatherBit)
 
@@ -70,17 +51,17 @@ We would love to hear about your experiences in these national treasures, you ca
 
 
 
--Contribute:
+## -Contribute:
 If youd like to contribute to our project, we would love your help! Please read up on the contributing guidelines before contacting us.
     https://github.com/zulip/zulip-electron/blob/master/CONTRIBUTING.md 
 
 
 
-Credits: =================================>>> Everyone
-    -Kyle R S Padilla, Back-End Team Member: https://kylepadilla.github.io/Bootstrap-Portfolio/
-    -Joe Falcs: github link
-    -rose mcClain: github link
-    -chris: ""
+### Credits:
+    -Joseph Falconetti
+    -Kyle R S Padilla
+    -Rose McClain
+    -Chris Hoayun
 
 
 Licence:
