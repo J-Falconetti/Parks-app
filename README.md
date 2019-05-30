@@ -14,7 +14,6 @@ National Parks Finder Ver 1.0.0 is a full featured web application that allows i
 
         built with:
             -bootstrap
-            -firebase
             -materialise
             -Firebase.
 
